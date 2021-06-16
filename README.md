@@ -13,4 +13,9 @@ Create a simple calendar application that allows a user to save events for each 
 * Upon refresh, activities stay listed in planner
 
 ## Screen Shot
+### Key: Green - Future, Mauve - Current Hour, Peach - Past
+![Bleu's Day Planner](images/Screenshot.png)
 
+## Links
+* Deployed Site: https://bleufox.github.io/BleusDayPlanner/
+* GitHub Repo: https://github.com/bleufox/BleusDayPlanner
