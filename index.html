@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" />
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"
+    integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous" />
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+  <title>Work Day Scheduler</title>
+</head>
+
+<body onload="loggedEvents()">
+  <header class="jumbotron">
+    <h1 class="display-3">Work Day Scheduler</h1>
+    <p class="lead">A simple calendar app for scheduling your work day. <br>Click the "Add" button below to save your entries.</p>
+    <p id="currentDay" class="lead"></p>
+  </header>
+
+  <div class="container">
+
+    <div class="time-block row">
+      <div class="hour col-md-2">8:00 am</div>
+      <textarea id="hour8" class="col-md-9" placeholder="Add your event here"></textarea>
+      <button class="saveBtn" onclick="saveEvent('hour8', document.getElementById('hour8').value)">Add</button>
+    </div>
+
+    <div class="time-block row">
+      <div class="hour col-md-2">9:00 am</div>
+      <textarea id="hour9" class="col-md-9" placeholder="Add your event here"></textarea>
+      <button class="saveBtn" onclick="saveEvent('hour9', document.getElementById('hour9').value)">Add</button>
+    </div>
+
+    <div class="time-block row">
+      <div class="hour col-md-2">10:00 am</div>
+      <textarea id="hour10" class="col-md-9" placeholder="Add your event here"></textarea>
+      <button class="saveBtn" onclick="saveEvent('hour10', document.getElementById('hour10').value)">Add</button>
+    </div>
+
+    <div class="time-block row">
+      <div class="hour col-md-2">11:00 am</div>
+      <textarea id="hour11" class="col-md-9" placeholder="Add your event here"></textarea>
+      <button class="saveBtn" onclick="saveEvent('hour11', document.getElementById('hour11').value)">Add</button>
+    </div>
+
+    <div class="time-block row">
+      <div class="hour col-md-2">12:00 pm</div>
+      <textarea id="hour12" class="col-md-9" placeholder="Add your event here"></textarea>
+      <button class="saveBtn" onclick="saveEvent('hour12', document.getElementById('hour12').value)">Add</button>
+    </div>
+
+    <div class="time-block row">
+      <div class="hour col-md-2">1:00 pm</div>
+      <textarea id="hour13" class="col-md-9" placeholder="Add your event here"></textarea>
+      <button class="saveBtn" onclick="saveEvent('hour13', document.getElementById('hour13').value)">Add</button>
+    </div>
+
+    <div class="time-block row">
+      <div class="hour col-md-2">2:00 pm</div>
+      <textarea id="hour14" class="col-md-9" placeholder="Add your event here"></textarea>
+      <button class="saveBtn" onclick="saveEvent('hour14', document.getElementById('hour14').value)">Add</button>
+    </div>
+
+    <div class="time-block row">
+      <div class="hour col-md-2">3:00 pm</div>
+      <textarea id="hour15" class="col-md-9" placeholder="Add your event here"></textarea>
+      <button class="saveBtn" onclick="saveEvent('hour15', document.getElementById('hour15').value)">Add</button>
+    </div>
+
+    <div class="time-block row">
+      <div class="hour col-md-2">4:00 pm</div>
+      <textarea id="hour16" class="col-md-9" placeholder="Add your event here"></textarea>
+      <button class="saveBtn" onclick="saveEvent('hour16', document.getElementById('hour16').value)">Add</button>
+    </div>
+
+    <div class="time-block row">
+      <div class="hour col-md-2">5:00 pm</div>
+      <textarea id="hour17" class="col-md-9" placeholder="Add your event here"></textarea>
+      <button class="saveBtn" onclick="saveEvent('hour17', document.getElementById('hour17').value)">Add</button>
+    </div>
+
+  </div>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
+  <script src="js/script.js"></script>
+</body>
+
+</html>
