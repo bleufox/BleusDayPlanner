@@ -16,7 +16,6 @@ function liveTime() {
     for (let i = 8; i < 18; i++) {
         if (i == currentHour) {
             document.getElementById("hour" + i).classList.add("present");
-            // $("#hour" + i).addClass("present")
         } else if (i < currentHour) {
             document.getElementById("hour" + i).classList.add("past");
         } else if (i > currentHour) {
