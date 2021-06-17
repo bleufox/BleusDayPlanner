@@ -1,11 +1,18 @@
-setInterval(currentTime, 1000);
 const currentDay = $('#currentDay');
+// Variable currentDay is equal to document.getElementById('currentDay'). Above variable uses jQuery to communicate the same thing.
+
 const currentDate = $('<div>');
+// Couldn't figure out how to translate the above into vanilla JS
+
+setInterval(currentTime, 1000);
+//setInterval (used to evaluate an expression at specified intervals, in this case 1000 milliseconds = 1 second at a time) is invoking the currentTime function which displays the current date using moment library which displays the time and date in various human-readable formats.
 
 function currentTime() {
-    currentDate.text(moment().format('dddd' + ', ' + 'MMMM D, YYYY'));
+    currentDate.text(moment().format('MMMM Do, YYYY h:mm:ss a'));
     currentDay.append(currentDate);
 }
+
+// Function currentTime 
 
 currentTime();
 
@@ -24,16 +31,17 @@ function liveTime() {
     }
 }
 
-let events = [];
+let events
 
-function loggedEvents() {
+function storedEvents() {
     liveTime();
-
-    events = retrieveFromStorage("localStorageEvent");
+    
+    events = retrieveFromStorage("storage");
     if (events === null) {
         events = {};
-        sendToStorage("localStorageEvent", events);
+        sendToStorage("storage", events);
     }
+    console.log(events);
     if (events.hasOwnProperty("hour8")) {
         document.getElementById("hour8").value = events.hour8;
     }
@@ -66,16 +74,16 @@ function loggedEvents() {
     }
 }
 
+function retrieveFromStorage(key) {
+    return JSON.parse(localStorage.getItem(key));
+}
+
 function saveEvent(key, value) {
     events[key] = value;
-    alert("Event Added!")
-    sendToStorage("localStorageEvent", events);
+    alert("Event Successfully Added!")
+    sendToStorage("storage", events);
 }
 
 function sendToStorage(key, value) {
     localStorage.setItem(key, JSON.stringify(value));
-}
-
-function retrieveFromStorage(key) {
-    return JSON.parse(localStorage.getItem(key));
 }
