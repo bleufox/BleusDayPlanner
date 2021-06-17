@@ -12,36 +12,56 @@ function currentTime() {
     currentDay.append(currentDate);
 }
 
-// Function currentTime 
+// Function currentTime retireves the current date in the specified format and appends the currentDate variable to the currentDay variable which is document.getElementById('currentDay) to the DOM element with the corresponding Id.
 
 currentTime();
+// Calls the function currentTime
 
 function liveTime() {
     const today = new Date();
+    // Variable today generates a new date every time the liveTime function is invoked.
+
     const currentHour = today.getHours();
+    // Variable currentHour returs the hour according to local time.
 
     for (let i = 8; i < 18; i++) {
-        if (i == currentHour) {
+        if (i === currentHour) {
             document.getElementById("hour" + i).classList.add("present");
+            // Compares i to the currentHour variable and, if true, adds class 'present' to the dom element and applies the appropriate CSS.
+
         } else if (i < currentHour) {
             document.getElementById("hour" + i).classList.add("past");
+            // Compares i to the currentHour variable and, if true, adds class 'past' to the dom element and applies the appropriate CSS.
+
         } else if (i > currentHour) {
             document.getElementById("hour" + i).classList.add("future");
         }
+        // Compares i to the currentHour variable and, if true, adds class 'future' to the dom element and applies the appropriate CSS.
     }
+    // The for loop sets the variable i to 8 and runs the following if and else if statements until it reaches 18.
 }
 
-let events
+// The liveTime function keeps the current time, compares the currentHour variable against the index and adds a class (past, present future) if the criteria is met in any of the three arguments in the else if functions. If the variable meets any of the three arguments, the appropriate CSS properties associated with .present, .past, .future are applied.
 
-function storedEvents() {
+let events
+// Declares variable events for use in the storedEvents and saveEvents functions
+
+function savedEvents() {
     liveTime();
-    
-    events = retrieveFromStorage("storage");
+    // Calls liveTime function
+
+    events = getFromStorage("storage");
+    // events is declared as the function getFromStorage and provides a key for the saveToStorage function.
+
     if (events === null) {
+        // if events is equal to null, create an empty object.
         events = {};
-        sendToStorage("storage", events);
+        saveToStorage("storage", events);
+        // Calls saveToStorage function which uses the "storage" key and inserts the events as the value to save to local storage.
     }
-    console.log(events);
+
+    // All if statements below take the .hasOwnProperty function which creates a boolean by comparing the specified id against hard code (ex: "hour8"). If the boolean is true, then the user input is added to the events empty object for that hour.
+
     if (events.hasOwnProperty("hour8")) {
         document.getElementById("hour8").value = events.hour8;
     }
@@ -74,16 +94,16 @@ function storedEvents() {
     }
 }
 
-function retrieveFromStorage(key) {
+function saveEvent(key, userEntry) {
+    events[key] = userEntry;
+    saveToStorage("storage", events);
+}
+// saveEvent function takes the key and userEntry parameters and redeclares events variable as the parameters as key = userEntry, then invokes the saveToStorage function which uses the hard code "storage" as the key and the newly declared events variable as the "value".
+
+function getFromStorage(key) {
     return JSON.parse(localStorage.getItem(key));
 }
 
-function saveEvent(key, value) {
-    events[key] = value;
-    alert("Event Successfully Added!")
-    sendToStorage("storage", events);
-}
-
-function sendToStorage(key, value) {
-    localStorage.setItem(key, JSON.stringify(value));
+function saveToStorage(key, userEntry) {
+    localStorage.setItem(key, JSON.stringify(userEntry));
 }
