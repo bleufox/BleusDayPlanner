@@ -13,7 +13,7 @@ Simple calendar application that allows a user to save events for each hour of t
 * Save activity to local storage with save buttons
 * Upon refresh, activities stay listed in planner
 
-## Technologies used
+## Technologies Used
 * HTML
 * CSS 
 * Javascript
