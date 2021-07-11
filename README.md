@@ -21,7 +21,8 @@ Simple calendar application that allows a user to save events for each hour of t
 
 ## Screenshot
 ### Key: Green - Future, Mauve - Current Hour, Peach - Past
-![Bleu's Day Planner](images/Screenshot.png)
+![Bleu's Day Planner App](images/app-screenshot.png)
+![Bleu's Day Planner Calendar](images/calendar-screenshot.png)
 
 ## License
 * MIT
